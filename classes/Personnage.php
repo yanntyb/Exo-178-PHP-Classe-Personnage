@@ -5,7 +5,7 @@ class Personnage {
 
     // La propriété id est privée, je ne peux pas la modifier ou la lire directement en dehors de cette classe
     private $id;
-    public $nom;
+    private $nom;
     public $x;
     public $y;
 
@@ -22,6 +22,18 @@ class Personnage {
 
     }
 
+    public function walkLeft(){
+        $this->x -=1;
+    }
+
+    public function walkTop(){
+        $this->y -=1;
+    }
+
+    public function walkBot(){
+        $this->y +=1;
+    }
+
     // Setter permettant de définir l'attribut privé id
     public function setId($id) {
         $this->id = $id;
@@ -31,4 +43,21 @@ class Personnage {
     public function getId() {
         return $this->id;
     }
+
+    /**
+     * @return string
+     */
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom(string $nom): void
+    {
+        $this->nom = $nom;
+    }
+
 } 
